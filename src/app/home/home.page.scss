@@ -16,7 +16,7 @@
 #container p {
   font-size: 16px;
   line-height: 22px;
-  color: black;
+
   margin: 0;
 }
 ion-card-header ion-card-title{
@@ -28,4 +28,10 @@ ion-card-header ion-card-title{
 }
 .vigencia > strong{
     color:rgb(129, 36, 129);
+}
+.rojo{
+  color:red;
+}
+.azul{
+  color:blue;
 }

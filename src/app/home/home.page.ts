@@ -9,7 +9,7 @@ export class HomePage {
 
   constructor() {}
   ngOnInit (){}
-  verdadero: boolean=false;
+  verdadero: boolean=true;
   tarjetas= [
    
     {
@@ -27,5 +27,5 @@ export class HomePage {
       CVV:'088'
     }
   ];//mis tarjetas 
-
+ 
 }

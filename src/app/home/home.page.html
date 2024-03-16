@@ -14,7 +14,7 @@
   </ion-header>
 
   <div id="container">
-    <p *ngIf="verdadero">Si ves este mensaje,<strong>verdero </strong>es <strong>true</strong></p>
+    <p [ngClass]="{'rojo': verdadero,'azul': verdadero==false}">Si <strong>verdero </strong>es verdadero, este texto sera <strong>rojo</strong>, pero si es falso, entonces sera <strong>azul. </strong></p>
     <ion-card *ngFor='let tarjeta of tarjetas'>
     <ion-card-header>
       
