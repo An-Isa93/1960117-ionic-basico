@@ -8,7 +8,10 @@ import { Component } from '@angular/core';
 export class HomePage {
 
   constructor() {}
-  title: string= 'Mi nueva pagina!'
+  title: string= 'Mi nueva pagina!';
+  hazmeClic(): void{
+    alert("Hiciste clic :D");
+  }
   ngOnInit (){}
   verdadero: boolean=true;
   tarjetas= [

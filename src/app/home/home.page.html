@@ -15,6 +15,7 @@
 
   <div id="container">
     <p [ngClass]="{'rojo': verdadero,'azul': verdadero==false}">Si <strong>verdero </strong>es verdadero, este texto sera <strong>rojo</strong>, pero si es falso, entonces sera <strong>azul. </strong></p>
+  
     <ion-card *ngFor='let tarjeta of tarjetas'>
     <ion-card-header>
       
@@ -33,6 +34,7 @@
       <strong>****</strong>
     </div>
   </ion-card>
+  <ion-button (click)="hazmeClic()">Hazme Clic</ion-button>
   </div>
-
+  
 </ion-content>
