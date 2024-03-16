@@ -14,27 +14,8 @@
   </ion-header>
 
   <div id="container">
-    <p [ngClass]="{'rojo': verdadero,'azul': verdadero==false}">Si <strong>verdero </strong>es verdadero, este texto sera <strong>rojo</strong>, pero si es falso, entonces sera <strong>azul. </strong></p>
-  
-    <ion-card *ngFor='let tarjeta of tarjetas'>
-    <ion-card-header>
-      
-      <ion-card-title>{{tarjeta.numero}}</ion-card-title>
-      <ion-card-subtitle>{{tarjeta.nombre}}</ion-card-subtitle>
-    </ion-card-header>
-
-    <ion-card-content>
-      <div class="vigencia">
-      <span>Vigencia </span>
-      <strong>{{tarjeta.vigenciaInicio}}/{{tarjeta.vigenciaFin}}</strong>
-      </div>
-    </ion-card-content>
-    <div class="vigencia">
-      <span>CCV </span>
-      <strong>****</strong>
-    </div>
-  </ion-card>
-  <ion-button (click)="hazmeClic()">Hazme Clic</ion-button>
+    
+    <img [src]="imgUrl">
   </div>
   
 </ion-content>
