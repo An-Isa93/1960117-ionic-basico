@@ -1,0 +1,20 @@
+
+<h1>Lista Alumnos</h1>
+<div *ngFor="let tarjeta of tarjetas">
+  <div id="container">
+    <ion-card-content  class="custom-border">
+    <ion-card-header>
+      <ion-card-title>{{tarjeta.numero}}</ion-card-title>
+      <ion-card-subtitle>{{tarjeta.nombre}}</ion-card-subtitle>
+    </ion-card-header>
+        <div class="vigencia">
+        <span>Vigencia </span>
+        <strong>{{tarjeta.vigenciaInicio}}/{{tarjeta.vigenciaFin}}</strong>
+        </div>
+      <div class="vigencia">
+        <span>CCV </span>
+        <strong>****</strong>
+      </div>
+    </ion-card-content>
+ </div>
+</div>

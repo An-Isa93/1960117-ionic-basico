@@ -8,13 +8,13 @@ import { Component } from '@angular/core';
 export class HomePage {
 
   constructor() {}
-  title: string= 'Mi nueva pagina!';
+  title: string= 'Pagina Principal';
   hazmeClic(): void{
     alert("Hiciste clic :D");
   }
   ngOnInit (){}
   verdadero: boolean=true;
-  tarjetas= [
+ /* tarjetas= [
    
     {
       nombre:'Arturo Alejandro Arellano',
@@ -30,7 +30,7 @@ export class HomePage {
       vigenciaFin:'27',
       CVV:'088'
     }
-  ];//mis tarjetas 
+  ];//mis tarjetas */
    imgUrl: string="https://i.pinimg.com/originals/57/61/5b/57615b8c0092a66c1d4058b1692955cc.gif"
    nombreAlumno: string='';
   }
