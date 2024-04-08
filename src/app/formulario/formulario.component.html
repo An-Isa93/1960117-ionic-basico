@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="title">Agregar tarea</ion-title>
+  </ion-toolbar>
+</ion-header>
+<div class="tareas">
+<strong>Nombre de la tarea</strong>
+<ion-input label-placement="floating" fill="outline"></ion-input>
+<strong>Fecha estimada en que se completará</strong>
+<div class="date">
+<ion-select label="01"  fill="outline">
+  <ion-select-option value="01">01</ion-select-option>
+  <ion-select-option value="02">02</ion-select-option>
+</ion-select>
+<ion-select label="2024"  fill="outline">
+  <ion-select-option value="2024">2024</ion-select-option>
+  <ion-select-option value="2023">2023</ion-select-option>
+  <ion-select-option value="2024">2022</ion-select-option>
+  <ion-select-option value="2023">2021</ion-select-option>
+</ion-select>
+</div>
+<strong>Descripcion</strong>
+<ion-textarea fill="outline"></ion-textarea>
+<ion-button expand="block">Agregar</ion-button>
+</div>

@@ -1,0 +1,45 @@
+ ion-toolbar{
+    --border-width: 0 0  2px 0;
+    --border-color: black;
+    margin-bottom: 2rem;
+ }
+ 
+.title{
+    font-weight: bolder;
+    font-size: 30px;
+    text-align: center;
+    --color: black;
+ }
+
+ .date ion-select{
+    width:30%;
+    display: inline-block;
+    margin-right: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+ }
+ ion-textarea{
+    height: 35vh; 
+    width: 90%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+ }
+ ion-input{
+    width: 90%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+ }
+ .tareas{
+    margin-left: 9%;
+    margin-right: 2%;
+    
+ }
+ ion-button{
+    --background:#43afee;
+    font-size: 20px;
+    font-weight: bolder;
+    --color:black;
+    width: 90%;
+    height: 60px;
+   margin-top: 2%;
+ }
