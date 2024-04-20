@@ -1,0 +1,28 @@
+ion-toolbar{
+    --border-width: 0 0  2px 0;
+    --border-color: white;
+    --background:  #61385b;
+ }
+ 
+ 
+ .title{
+    font-weight: bolder;
+    font-size: 30px;
+    text-align: center;
+    --color: white;
+ }
+ 
+
+ ion-content {
+   ion-card-content.container {
+     .date {
+       font-size: 20px; 
+       
+     }
+     p {
+       font-size: 20px; 
+     }
+   }
+ }
+ 
+ 

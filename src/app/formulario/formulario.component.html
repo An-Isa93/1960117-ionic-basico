@@ -1,33 +1,47 @@
+
 <ion-header>
-  <ion-toolbar>
-    <ion-title class="title">Agregar tarea</ion-title>
-  </ion-toolbar>
-</ion-header>
-<form class="tareas" (ngSubmit)="submitForm()" #form="ngForm"> <!--#form: referencia local al formulario (ngSubmit)="submitForm()": ejecuta la funcion-->
-   <strong>Nombre de la tarea</strong>
-   <!--[(ngModel)]="tareaForm.nombreTarea" enlaza la propiedad nombreTarea del objeto tareaForm en el 
-    componente TypeScript con un elemento de entrada de texto en HTML.-->
-   <ion-input type="text" name="nombreTarea" [(ngModel)]="tareaForm.nombreTarea" required label-placement="floating" fill="outline"></ion-input>
-   <strong>Fecha estimada en que se completará</strong>
-<div class="date">
-<ion-select type="text" name="DiaTarea" [(ngModel)]="tareaForm.diaTarea" required label="Dia" fill="outline">
-   <ion-select-option value="01">01</ion-select-option>
-   <ion-select-option value="02">02</ion-select-option>
-</ion-select>
-<ion-select type="text" name="MesTarea" [(ngModel)]="tareaForm.mesTarea" required label="Mes" fill="outline">
-   <ion-select-option value="01">01</ion-select-option>
-   <ion-select-option value="02">02</ion-select-option>
-   <ion-select-option value="01">03</ion-select-option>
-   <ion-select-option value="02">04</ion-select-option>
-</ion-select>
-<ion-select type="text" name="AñoTarea" [(ngModel)]="tareaForm.yearTarea" required label="Año"  fill="outline">
-   <ion-select-option value="2024">2024</ion-select-option>
-   <ion-select-option value="2023">2023</ion-select-option>
-   <ion-select-option value="2024">2022</ion-select-option>
-   <ion-select-option value="2023">2021</ion-select-option>
-</ion-select>
-</div>
-<strong>Descripcion</strong>
-   <ion-textarea name="descripcion" fill="outline" [(ngModel)]="tareaForm.descripcion" required></ion-textarea>
-   <ion-button expand="block" type="submit" [disabled]="form.invalid">Agregar</ion-button>
-</form>
+   <ion-toolbar>
+     <ion-title class="title">Agregar tarea</ion-title>
+   </ion-toolbar>
+ </ion-header>
+ <ion-content>
+ <form class="tareas" (ngSubmit)="submitForm()" #form="ngForm"> <!--#form: referencia local al formulario (ngSubmit)="submitForm()": ejecuta la funcion-->
+    <strong>Nombre de la tarea</strong>
+    <!--[(ngModel)]="tareaForm.nombreTarea" enlaza la propiedad nombreTarea del objeto tareaForm en el 
+     componente TypeScript con un elemento de entrada de texto en HTML.-->
+    <ion-input type="text" name="nombreTarea" [(ngModel)]="tareaNueva.titulo" required label-placement="floating" fill="outline"></ion-input>
+    <strong>Fecha estimada en que se completará</strong>
+ <div class="date">
+ <ion-select type="text" name="DiaTarea" [(ngModel)]="tareaNueva.dia" required label="Dia" fill="outline">
+    <ion-select-option value="01">01</ion-select-option>
+    <ion-select-option value="02">02</ion-select-option>
+    <ion-select-option value="03">03</ion-select-option>
+    <ion-select-option value="04">04</ion-select-option>
+    <ion-select-option value="05">05</ion-select-option>
+    <ion-select-option value="06">06</ion-select-option>
+    <ion-select-option value="07">07</ion-select-option>
+    <ion-select-option value="08">08</ion-select-option>
+    <ion-select-option value="09">09</ion-select-option>
+    <ion-select-option value="10">10</ion-select-option>
+ </ion-select>
+ <ion-select type="text" name="MesTarea" [(ngModel)]="tareaNueva.mes" required label="Mes" fill="outline">
+    <ion-select-option value="01">Enero</ion-select-option>
+    <ion-select-option value="02">Febrero</ion-select-option>
+    <ion-select-option value="03">Marzo</ion-select-option>
+    <ion-select-option value="04">Abril</ion-select-option>
+    <ion-select-option value="05">Mayo</ion-select-option>
+    <ion-select-option value="06">Junio</ion-select-option>
+ </ion-select>
+ <ion-select type="text" name="AñoTarea" [(ngModel)]="tareaNueva.anio" required label="Año"  fill="outline">
+    <ion-select-option value="2024">2024</ion-select-option>
+    <ion-select-option value="2025">2025</ion-select-option>
+    <ion-select-option value="2026">2026</ion-select-option>
+    <ion-select-option value="2027">2027</ion-select-option>
+ </ion-select>
+ </div>
+    <strong>Descripcion</strong>
+    <ion-textarea name="descripcion" fill="outline" [(ngModel)]="tareaNueva.descripcion" required></ion-textarea>
+    <ion-button expand="block" type="submit" [disabled]="form.invalid" (click)="submitForm()">Agregar</ion-button>
+ </form>
+ </ion-content>
+ 

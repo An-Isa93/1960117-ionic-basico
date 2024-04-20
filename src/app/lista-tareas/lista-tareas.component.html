@@ -1,18 +1,19 @@
-<div class="list">
+<ion-content fullscreen >
   <ion-header>
     <ion-toolbar>
       <ion-title class="title">Mi App de Tareas</ion-title>
     </ion-toolbar>
   </ion-header>
-<div *ngFor="let tarea of tareas">
-<ion-card-content class="container">
-  
-    <ion-card-title>{{tarea.titulo}}</ion-card-title>
-    <div class="date">
-    <span><strong>Fecha</strong> {{tarea.fecha}}</span>
-    </div>
-    <ion-button class="details-button" expand="full">+ Ver más detalles</ion-button>
-</ion-card-content>
-</div>
-<ion-fab-button>+</ion-fab-button>
-</div>
+
+   <div *ngFor="let tarea of tareas">
+     <ion-card-content class="container">
+        <ion-card-title>{{tarea.titulo}}</ion-card-title>
+        <div class="date">
+          <span><strong>Fecha:</strong> {{tarea.dia}}/{{tarea.mes}}/{{tarea.anio}}</span>
+        </div>
+        <ion-button class="details-button" expand="full" (click)="verDetalles(tarea)">+ Ver más detalles</ion-button>
+      </ion-card-content>
+   </div>
+
+</ion-content>
+<ion-fab-button (click)="mostrarFormulario()" position="end">+</ion-fab-button>

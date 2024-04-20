@@ -10,8 +10,10 @@ import { AppComponent } from './app.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { ListaTareasComponent } from './lista-tareas/lista-tareas.component';
 import { ListaTarjetasComponent } from './lista-tarjetas/lista-tarjetas.component';
+import { TareaDetallesComponent } from './tarea-detalles/tarea-detalles.component';
+
 @NgModule({
-  declarations: [AppComponent,ListaTarjetasComponent,ListaTareasComponent,FormularioComponent],
+  declarations: [AppComponent,ListaTarjetasComponent,ListaTareasComponent,FormularioComponent,TareaDetallesComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
