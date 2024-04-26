@@ -1,7 +1,7 @@
 ion-toolbar{
     --border-width: 0 0  2px 0;
     --border-color: white;
-    --background:  #61385b;
+    --background: #92698c;
  }
  
  
@@ -23,6 +23,9 @@ ion-toolbar{
        font-size: 20px; 
      }
    }
+ }
+ ion-back-button{
+  --color:white;
  }
  
  

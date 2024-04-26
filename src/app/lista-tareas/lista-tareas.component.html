@@ -5,15 +5,21 @@
     </ion-toolbar>
   </ion-header>
 
-   <div *ngFor="let tarea of tareas">
+   <div *ngFor="let tareaServicio of tareaServicioArray; index as i">
      <ion-card-content class="container">
-        <ion-card-title>{{tarea.titulo}}</ion-card-title>
-        <div class="date">
-          <span><strong>Fecha:</strong> {{tarea.dia}}/{{tarea.mes}}/{{tarea.anio}}</span>
+       <ion-card-title>{{tareaServicio.titulo}}</ion-card-title>
+           <div class="date">
+              <span><strong>Fecha: </strong>{{tareaServicio.dia}}/{{tareaServicio.mes}}/{{tareaServicio.anio}}</span>
+           </div>
+        <div class="footer-box">
+          <ion-button fill="outline" class="details-button" shape="round" expand="block" (click)="verDetalles(tareaServicio)">+ Ver más detalles</ion-button>      
+         <div class="box">
+          <ion-button color="danger" fill="clear" (click)="eliminarTarea(i)">
+            <ion-icon color="danger" name="trash"></ion-icon>
+          </ion-button>
+         </div>
         </div>
-        <ion-button class="details-button" expand="full" (click)="verDetalles(tarea)">+ Ver más detalles</ion-button>
       </ion-card-content>
-   </div>
+    </div>
 
-</ion-content>
-<ion-fab-button (click)="mostrarFormulario()" position="end">+</ion-fab-button>
+<ion-fab-button  (click)="mostrarFormulario()" position="end">+</ion-fab-button>

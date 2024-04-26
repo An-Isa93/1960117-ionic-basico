@@ -1,64 +1,62 @@
-
+*{
+  font-family: "Century Gothic";
+}
 .title{
     --color:white;
     font-weight: bolder;
     font-size: 30px;
     text-align: center;
  }
+ ion-button{
+   --border-color:var(--background);
+ }
  ion-card-title{
     font-size: 18px;
-    color: #61385b;
+    color: #494749;
     font-weight: bolder;
+    width:200px;
+    white-space: nowrap; 
+    margin-bottom: 1%;
  }
 
  ion-toolbar{
    position:static;
-    --background: #61385b;
+    --background: #92698c;
     --border-width: 0 0  2px 0;
     --border-color: white;
     margin-bottom: 5rem;
  }
  ion-content{
-   --background:#774f72;
    height:60vh;
  }
- .list{
-     background: #995890;
-     width: 100%;
-     margin-bottom: 0;
-     height: 100vh;
-     display: block;
- }
+
  .container{
-   
+     border: 2px solid #774f72;
      background: white;
      margin-bottom: 2%;
      height: 100;
-     width: 96%;
-     margin-left: 2%;
-     margin-right: 2%;
+     margin-left: 4%;
+     margin-right: 4%;
  }
 
  .details-button{
-     --background: #D9D9D9;
-     color:  #61385b;
+     --background: #92698c;
+     --border: 1px block #92698c;
+     color:  white;
      font-weight: bolder;
      font-size: 18px;
-     --text-align: left ;
+     width: 95%;
  
  }
  .date{
     color: #61385b;
     font-size: 18px;
-    margin-bottom: 3%;
-    margin-top: 1%;
+    margin-bottom: 1%;
  }
  .date strong{
     color:black;
  }
  ion-fab-button{
-    outline: 5px dotted white;
-    outline-offset: -2px;
     border-radius: 50%;
     position: absolute;
     font-size: 2rem;
@@ -66,5 +64,25 @@
     bottom: 5%;
     --color: white;
     font-weight: bolder;
-    --background:#2489e7;
+    --background: #92698c;
+ }
+ ion-button{
+   --background:none;
+ }
+
+ ion-icon{
+   font-size: 200%;
+   --background: none;
+   color:#61385b;
+   --border:none;
+   font-weight: bolder;
+ }
+
+ .box{
+   display: flex;
+   justify-content: right;
+   height: 30px;
+ }
+ .footer-box{
+   display: flex;
  }

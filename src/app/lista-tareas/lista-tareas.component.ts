@@ -1,9 +1,9 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { ActionTareasService } from '../action-tareas.service';
 import { FormularioComponent } from '../formulario/formulario.component';
 import { Tarea } from '../modulos/tarea';
 import { TareaDetallesComponent } from '../tarea-detalles/tarea-detalles.component';
-
 
 @Component({
   selector: 'app-lista-tareas',
@@ -11,58 +11,25 @@ import { TareaDetallesComponent } from '../tarea-detalles/tarea-detalles.compone
   styleUrls: ['./lista-tareas.component.scss'],
 })
 export class ListaTareasComponent  implements OnInit {
-
-  constructor(private modalController: ModalController, private changeDetectorRef: ChangeDetectorRef) { }
-
+  private idTarea=0;
+  constructor(private modalController: ModalController, private tareaServicio:ActionTareasService) { }
+  tareaServicioArray: Tarea[]=this.tareaServicio.tareas;
+  tarea: Tarea = {
+    titulo: '',
+    dia: 0,
+    mes: 0,
+    anio: 0,
+    descripcion: ''
+  };
   ngOnInit() {}
-  tareaN: Tarea={
-    titulo:'',
-    descripcion:'',
-    dia:0,
-    mes:0,
-    anio:0
-  }
-  tareas: Tarea[]=[
-    {
-      titulo: 'Llevar a Bruno al veterinario',
-      dia:5, 
-      mes:3,
-      anio:2024,
-      descripcion:''
-    },
-    {
-      titulo: 'Recordar Tarea de Aplicaciones Moviles',
-      dia:7, 
-      mes:4,
-      anio:2024,
-      descripcion:''
-    }
-  ]
 
-  
   async mostrarFormulario() {
     const modal = await this.modalController.create({
       component: FormularioComponent
     });
-   
-
-    modal.onDidDismiss().then((dataReturned) => {
-      console.log("Datos recibidos del modal:", dataReturned);
-     
-        this.tareaN=dataReturned.data;
-        if(this.tareaN.titulo!='' && this.tareaN.descripcion!='' &&this.tareaN.dia!=0 && this.tareaN.mes!=0 && this.tareaN.anio!=0)
-        {
-          this.tareas.push(this.tareaN);
-          this.changeDetectorRef.detectChanges();
-        }
-        else{
-          console.log("ERROR");
-        }
-      
-    });
     await modal.present();
   }
-
+  
   async verDetalles(tarea: Tarea) {
     const modal = await this.modalController.create({
       component: TareaDetallesComponent,
@@ -71,6 +38,10 @@ export class ListaTareasComponent  implements OnInit {
       }
     });
     return await modal.present();
+  }
+
+  eliminarTarea(idTareas:number){
+    this.tareaServicio.deleteTareas(idTareas);
   }
  
 }

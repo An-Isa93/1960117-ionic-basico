@@ -1,18 +1,21 @@
 
 <ion-header>
    <ion-toolbar>
+      <ion-buttons slot="start" (click)="cerrarModal()">
+         <ion-back-button default-href="#"></ion-back-button>
+       </ion-buttons>
      <ion-title class="title">Agregar tarea</ion-title>
    </ion-toolbar>
  </ion-header>
  <ion-content>
- <form class="tareas" (ngSubmit)="submitForm()" #form="ngForm"> <!--#form: referencia local al formulario (ngSubmit)="submitForm()": ejecuta la funcion-->
+ <form class="tareas"  #form="ngForm"> <!--#form: referencia local al formulario (ngSubmit)="submitForm()": ejecuta la funcion-->
     <strong>Nombre de la tarea</strong>
     <!--[(ngModel)]="tareaForm.nombreTarea" enlaza la propiedad nombreTarea del objeto tareaForm en el 
      componente TypeScript con un elemento de entrada de texto en HTML.-->
     <ion-input type="text" name="nombreTarea" [(ngModel)]="tareaNueva.titulo" required label-placement="floating" fill="outline"></ion-input>
     <strong>Fecha estimada en que se completará</strong>
  <div class="date">
- <ion-select type="text" name="DiaTarea" [(ngModel)]="tareaNueva.dia" required label="Dia" fill="outline">
+ <ion-select interface="popover" type="text" name="DiaTarea" [(ngModel)]="tareaNueva.dia" required label="Dia" fill="outline">
     <ion-select-option value="01">01</ion-select-option>
     <ion-select-option value="02">02</ion-select-option>
     <ion-select-option value="03">03</ion-select-option>
@@ -24,7 +27,7 @@
     <ion-select-option value="09">09</ion-select-option>
     <ion-select-option value="10">10</ion-select-option>
  </ion-select>
- <ion-select type="text" name="MesTarea" [(ngModel)]="tareaNueva.mes" required label="Mes" fill="outline">
+ <ion-select interface="popover" type="text" name="MesTarea" [(ngModel)]="tareaNueva.mes" required label="Mes" fill="outline">
     <ion-select-option value="01">Enero</ion-select-option>
     <ion-select-option value="02">Febrero</ion-select-option>
     <ion-select-option value="03">Marzo</ion-select-option>
@@ -32,7 +35,7 @@
     <ion-select-option value="05">Mayo</ion-select-option>
     <ion-select-option value="06">Junio</ion-select-option>
  </ion-select>
- <ion-select type="text" name="AñoTarea" [(ngModel)]="tareaNueva.anio" required label="Año"  fill="outline">
+ <ion-select interface="popover" type="text" name="AñoTarea" [(ngModel)]="tareaNueva.anio" required label="Año"  fill="outline">
     <ion-select-option value="2024">2024</ion-select-option>
     <ion-select-option value="2025">2025</ion-select-option>
     <ion-select-option value="2026">2026</ion-select-option>
@@ -43,5 +46,6 @@
     <ion-textarea name="descripcion" fill="outline" [(ngModel)]="tareaNueva.descripcion" required></ion-textarea>
     <ion-button expand="block" type="submit" [disabled]="form.invalid" (click)="submitForm()">Agregar</ion-button>
  </form>
+
  </ion-content>
  

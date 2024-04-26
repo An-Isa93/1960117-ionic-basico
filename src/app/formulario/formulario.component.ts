@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { ActionTareasService } from '../action-tareas.service';
 import { Tarea } from '../modulos/tarea';
 
 @Component({
@@ -10,22 +10,29 @@ import { Tarea } from '../modulos/tarea';
 })
 
 export class FormularioComponent  implements OnInit {
-  @ViewChild('form', { static: true }) form!: NgForm; //busca el elemento form en HTML
-  tareaNueva: Tarea = { //Objeto que contiene las propiedades, utilizadas para almacenar los datos del formulario
-   titulo: '',
-   descripcion: '',
-   dia:0,
-   mes:0,
-   anio:0
- };
- constructor(private modalController: ModalController) {}
+ tareaNueva:Tarea=
+  {
+    titulo:'',
+    dia:0,
+    mes:0,
+    anio:0,
+    descripcion:''
+  };
+ 
+ constructor(private modalController: ModalController, private tareaServicio:ActionTareasService) {}
 
  ngOnInit() {}
- submitForm(){ //Funcion para enviar el formulario
-  this.modalController.dismiss(this.tareaNueva);
-  console.log("Formulario enviado", this.tareaNueva);
+ submitForm(){   //Funcion para enviar el formulario
+  if(this.tareaNueva.dia!=0 && this.tareaNueva.mes!=0 && this.tareaNueva.anio!=0){
+    this.tareaServicio.agregarTarea(this.tareaNueva);
+    this.modalController.dismiss();
+  }
+   else{
+    alert("Formulario no valido");
+   }
  }
  
- 
-
+ cerrarModal() {
+  this.modalController.dismiss();
+}
 }
