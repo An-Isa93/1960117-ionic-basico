@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { ActionTareasService } from '../action-tareas.service';
 import { FormularioComponent } from '../formulario/formulario.component';
 import { Tarea } from '../modulos/tarea';
-import { TareaDetallesComponent } from '../tarea-detalles/tarea-detalles.component';
 
 @Component({
   selector: 'app-lista-tareas',
@@ -12,9 +12,10 @@ import { TareaDetallesComponent } from '../tarea-detalles/tarea-detalles.compone
 })
 export class ListaTareasComponent  implements OnInit {
   private idTarea=0;
-  constructor(private modalController: ModalController, private tareaServicio:ActionTareasService) { }
+  constructor(private modalController: ModalController, private tareaServicio:ActionTareasService, private router: Router) { }
   tareaServicioArray: Tarea[]=this.tareaServicio.tareas;
   tarea: Tarea = {
+    id:0,
     titulo: '',
     dia: 0,
     mes: 0,
@@ -22,24 +23,15 @@ export class ListaTareasComponent  implements OnInit {
     descripcion: ''
   };
   ngOnInit() {}
-
+    
   async mostrarFormulario() {
     const modal = await this.modalController.create({
       component: FormularioComponent
     });
     await modal.present();
+    
   }
   
-  async verDetalles(tarea: Tarea) {
-    const modal = await this.modalController.create({
-      component: TareaDetallesComponent,
-      componentProps: {
-        tarea: tarea // Pasa la tarea seleccionada como parámetro al modal
-      }
-    });
-    return await modal.present();
-  }
-
   eliminarTarea(idTareas:number){
     this.tareaServicio.deleteTareas(idTareas);
   }

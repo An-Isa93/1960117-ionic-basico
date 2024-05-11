@@ -12,6 +12,7 @@ import { Tarea } from '../modulos/tarea';
 export class FormularioComponent  implements OnInit {
  tareaNueva:Tarea=
   {
+    id:0,
     titulo:'',
     dia:0,
     mes:0,
